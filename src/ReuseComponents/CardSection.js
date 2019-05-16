@@ -14,7 +14,7 @@ const CardSection = (props) => {
     )
 }
 
-export default CardSection
+export  {CardSection}
 
 const styles = StyleSheet.create({
     containerStyle: {

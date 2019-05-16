@@ -6,9 +6,11 @@ import {
     Image,
     Linking
 } from 'react-native'
-import Card from './Card'
-import CardSection from './CardSection'
-import Button from './Button'
+import {
+    Card,
+    CardSection,
+    Button
+} from '../../src/ReuseComponents'
 
 const AlbumDetail = ({album}) => {
     const { title, artist, thumbnail_image, image, url } = album
@@ -47,6 +49,7 @@ const AlbumDetail = ({album}) => {
                     text={`Order now`}
                 />
             </CardSection>
+        
         </Card>
     )
 }
