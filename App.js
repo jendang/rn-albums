@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {
-  StyleSheet, 
-  //Text, 
   View
 } from 'react-native';
 
@@ -11,7 +9,7 @@ import AlbumList from './src/components/AlbumList';
 export default class App extends Component {
   render() {
     return (
-      //to scroll it fullscreen
+      //flex: 1 to scroll it fullscreen
       <View style={{ flex: 1 }}>
         <Header headerText={`Albums!`} />
         <AlbumList />
@@ -20,12 +18,3 @@ export default class App extends Component {
   }
 }
 
-/* const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-
-}); */
