@@ -14,7 +14,7 @@ const Header = ({headerText}) => {
     )
 }
 
-export default Header
+export  {Header}
 
 const styles = StyleSheet.create({
     container: { //flexbox
