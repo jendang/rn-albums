@@ -3,13 +3,15 @@ import {
     Text,
     StyleSheet,
     View,
-    Image
+    Image,
+    Linking
 } from 'react-native'
 import Card from './Card'
 import CardSection from './CardSection'
+import Button from './Button'
 
 const AlbumDetail = ({album}) => {
-    const { title, artist, thumbnail_image, image } = album
+    const { title, artist, thumbnail_image, image, url } = album
     const { 
         textContainer, 
         thumbnailStyle, 
@@ -21,15 +23,29 @@ const AlbumDetail = ({album}) => {
         <Card>
             <CardSection>
                 <View style={thumbnailContainer}>
-                    <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
+                    <Image 
+                        style={thumbnailStyle} 
+                        source={{ uri: thumbnail_image }} 
+                    />
                 </View>
                 <View style={textContainer}>
                     <Text style={titleText}>{title}</Text>
                     <Text>{artist}</Text>
                 </View>
             </CardSection>
+
             <CardSection>
-                <Image style={albumCover} source={{ uri: image }} />
+                <Image 
+                    style={albumCover} 
+                    source={{ uri: image }} 
+                />
+            </CardSection>
+
+            <CardSection>
+                <Button 
+                    onPress={() => Linking.openURL(url)}
+                    text={`Order now`}
+                />
             </CardSection>
         </Card>
     )
