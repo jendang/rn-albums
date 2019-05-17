@@ -1,33 +1,37 @@
 import React from 'react'
 import {
-    TextInput,
-    StyleSheet
-} from 'react-native'
-import {
     Card,
     CardSection,
-    Button
+    Button,
+    Input
 } from '../../src/ReuseComponents'
 
 class LoginForm extends React.Component {
     state = {
-        text: ''
+        email: '',
+        password: ''
     }
     render() {
-        const { textInput } = styles
         return(
             <Card>
                 <CardSection>
-                    <TextInput 
-                        value={this.state.text}
-                        onChangeText={text => this.setState({text})}
-                        style={textInput}
+                    <Input 
+                        label="Email"
+                        placeholder="user@mail.com "
+                        value={this.state.email}
+                        onChangeText={email => this.setState({ email })}
+                    
                     />
                 </CardSection>
 
                 <CardSection>
-                    <TextInput 
-                        style={textInput}
+                    <Input 
+                        secureTextEntry={true} // for secure pass entry
+                        label="Password"
+                        placeholder="password"
+                        value={this.state.password}
+                        onChangeText={password => this.setState({ password })}
+                    
                     />
                 </CardSection>
 
@@ -41,9 +45,3 @@ class LoginForm extends React.Component {
 
 export default LoginForm
 
-const styles = StyleSheet.create({
-    textInput: {
-        height: 20,
-        width: 100
-    }
-})
